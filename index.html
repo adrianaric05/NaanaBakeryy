@@ -53,27 +53,42 @@
     </div>
   </header>
 
-  <!-- 1. HERO (TOPO) -->
-  <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-24 px-5">
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="uppercase tracking-[0.2em] text-xs text-dourado font-semibold mb-4">
-        Pastelaria Artesanal · Braga &amp; Barcelos
-      </p>
-      <h1 class="font-serif text-4xl sm:text-6xl font-semibold leading-tight text-castanho mb-6">
-        O sabor caseiro que transforma momentos simples em memórias.
-      </h1>
-      <p class="text-castanho-claro text-base sm:text-lg max-w-xl mx-auto mb-8 leading-relaxed">
-        Bolos feitos de raiz, acabadinhos de sair do forno para a tua mesa. 
-        Encomenda online com <strong>48h de antecedência</strong> e entrega grátis em Braga e Barcelos.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="#encomendas" class="w-full sm:w-auto bg-castanho text-creme px-8 py-3.5 rounded-full font-medium text-sm tracking-wide hover:bg-dourado transition shadow-sm">
-          Ver Catálogo &amp; Preços
-        </a>
-        <a href="#como-funciona" class="w-full sm:w-auto border border-castanho/25 text-castanho px-8 py-3.5 rounded-full font-medium text-sm hover:bg-bege transition">
-          Como Funciona
-        </a>
+  <!-- 1. HERO (TOPO COM SLIDESHOW AUTOMÁTICO DE 5 FOTOS) -->
+  <section class="relative pt-10 pb-14 sm:pt-16 sm:pb-20 px-5">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Texto de Entrada -->
+      <div class="lg:col-span-6 text-center lg:text-left">
+        <p class="uppercase tracking-[0.2em] text-xs text-dourado font-semibold mb-4">
+          Pastelaria Artesanal · Braga &amp; Barcelos
+        </p>
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-castanho mb-6">
+          O sabor caseiro que transforma momentos simples em memórias.
+        </h1>
+        <p class="text-castanho-claro text-base sm:text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+          Bolos feitos com carinho, acabadinhos de sair do forno para a tua mesa. 
+          Encomenda online com <strong>48h de antecedência</strong> e entrega <strong>grátis</strong> em Braga e Barcelos.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+          <a href="#encomendas" class="w-full sm:w-auto bg-castanho text-creme px-8 py-3.5 rounded-full font-medium text-sm tracking-wide hover:bg-dourado transition shadow-sm text-center">
+            Ver Catálogo &amp; Preços
+          </a>
+          <a href="#como-funciona" class="w-full sm:w-auto border border-castanho/25 text-castanho px-8 py-3.5 rounded-full font-medium text-sm hover:bg-bege transition text-center">
+            Como Funciona
+          </a>
+        </div>
       </div>
+
+      <!-- Slideshow Automático das 5 Fotos de Entrada -->
+      <div class="lg:col-span-6">
+        <div class="relative aspect-[4/3] sm:aspect-[4/4] max-w-md mx-auto lg:max-w-none w-full rounded-3xl overflow-hidden bg-bege border border-castanho/10 shadow-md">
+          <div id="hero-slides" class="w-full h-full relative"></div>
+
+          <!-- Pontinhos indicadores do slideshow -->
+          <div id="hero-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 bg-castanho/35 backdrop-blur-xs px-3 py-1.5 rounded-full z-10"></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -179,8 +194,57 @@
     </div>
   </div>
 
-  <!-- LÓGICA DO CATÁLOGO, CARROSSEL E PREÇOS -->
+  <!-- LÓGICA DO SLIDESHOW DE ENTRADA, CATÁLOGO E PREÇOS -->
   <script>
+    // 1. SLIDESHOW AUTOMÁTICO DE ENTRADA (5 FOTOS)
+    const HERO_FOTOS = [
+      'img/entrada-1.jpg',
+      'img/entrada-2.jpg',
+      'img/entrada-3.jpg',
+      'img/entrada-4.jpg',
+      'img/entrada-5.jpg'
+    ];
+
+    const heroSlidesContainer = document.getElementById('hero-slides');
+    const heroDotsContainer = document.getElementById('hero-dots');
+    let heroIndice = 0;
+
+    HERO_FOTOS.forEach((src, i) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `NanaBakery destaque ${i + 1}`;
+      img.className = `hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === 0 ? 'opacity-100' : 'opacity-0'}`;
+      img.onerror = function() {
+        this.src = `https://placehold.co/800x800/F0E9DF/3B281E?text=Foto+Entrada+${i + 1}`;
+      };
+      heroSlidesContainer.appendChild(img);
+
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Ver foto ${i + 1}`);
+      dot.onclick = () => irParaSlideHero(i);
+      dot.className = `hero-dot w-2 h-2 rounded-full transition-all duration-300 ${i === 0 ? 'bg-creme w-5' : 'bg-creme/50 hover:bg-creme/80'}`;
+      heroDotsContainer.appendChild(dot);
+    });
+
+    function irParaSlideHero(novoIndice) {
+      const slides = document.querySelectorAll('.hero-slide');
+      const dots = document.querySelectorAll('.hero-dot');
+      heroIndice = novoIndice;
+
+      slides.forEach((slide, i) => {
+        slide.className = `hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === heroIndice ? 'opacity-100' : 'opacity-0'}`;
+      });
+      dots.forEach((dot, i) => {
+        dot.className = `hero-dot h-2 rounded-full transition-all duration-300 ${i === heroIndice ? 'bg-creme w-5' : 'bg-creme/50 w-2 hover:bg-creme/80'}`;
+      });
+    }
+
+    setInterval(() => {
+      irParaSlideHero((heroIndice + 1) % HERO_FOTOS.length);
+    }, 3500);
+
+    // 2. CATÁLOGO DE PRODUTOS
     const PRODUTOS = [
       {
         id: 'chocolate',
