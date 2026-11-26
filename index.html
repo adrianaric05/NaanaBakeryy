@@ -83,7 +83,7 @@
       <div class="text-center mb-12">
         <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-castanho mb-3">Os Nossos Bolos</h2>
         <p class="text-castanho-claro text-sm sm:text-base max-w-lg mx-auto">
-          Escolhe o tamanho pretendido e clica em encomendar. A data de entrega e o pagamento (MB WAY ou Cartão) são escolhidos no passo seguinte.
+          Desliza pelas fotografias, escolhe o tamanho pretendido e clica em encomendar. A data de entrega e o pagamento (MB WAY ou Cartão) são escolhidos no passo seguinte.
         </p>
       </div>
 
@@ -128,12 +128,28 @@
 
   <!-- 4. QUEM SOMOS -->
   <section id="quem-somos" class="py-16 sm:py-20 px-5 bg-bege/60 border-t border-castanho/5">
-    <div class="max-w-3xl mx-auto text-center">
+    <div class="max-w-4xl mx-auto text-center">
       <p class="uppercase tracking-[0.2em] text-xs text-dourado font-semibold mb-3">A Nossa História</p>
       <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-castanho mb-6">Quem Somos</h2>
-      <p class="text-castanho-claro text-base sm:text-lg leading-relaxed">
+      <p class="text-castanho-claro text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-10">
         A Nana Bakery nasceu do desejo de transformar simples momentos em memórias inesquecíveis! Não há nada como o cheirinho reconfortante de um bolo acabadinho de sair do forno ou o sabor da verdadeira dedicação. Os doces caseiros têm uma magia única: despertam recordações de infância, abraçam-nos nos dias mais cinzentos e trazem um toque de felicidade a qualquer pausa do teu dia. ❤️
       </p>
+
+      <!-- Galeria Quem Somos -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="aspect-square rounded-2xl overflow-hidden bg-bege border border-castanho/10 shadow-sm">
+          <img src="img/quem-somos-1.jpg" alt="NanaBakery artesanal" class="w-full h-full object-cover hover:scale-105 transition duration-500"
+               onerror="this.src='https://placehold.co/500x500/F0E9DF/3B281E?text=NanaBakery+1'">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden bg-bege border border-castanho/10 shadow-sm">
+          <img src="img/quem-somos-2.jpg" alt="Confeção caseira" class="w-full h-full object-cover hover:scale-105 transition duration-500"
+               onerror="this.src='https://placehold.co/500x500/F0E9DF/3B281E?text=NanaBakery+2'">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden bg-bege border border-castanho/10 shadow-sm">
+          <img src="img/quem-somos-3.jpg" alt="Detalhes NanaBakery" class="w-full h-full object-cover hover:scale-105 transition duration-500"
+               onerror="this.src='https://placehold.co/500x500/F0E9DF/3B281E?text=NanaBakery+3'">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -171,17 +187,14 @@
     </div>
   </div>
 
-  <!-- LÓGICA DO CATÁLOGO E PREÇOS -->
+  <!-- LÓGICA DO CATÁLOGO, CARROSSEL E PREÇOS -->
   <script>
-    // =========================================================================
-    // ÁREA DE EDIÇÃO: Coloca aqui os nomes das fotos e os links da Stripe
-    // =========================================================================
     const PRODUTOS = [
       {
         id: 'chocolate',
         nome: 'Bolo de Chocolate',
         descricao: 'Intenso, húmido e irresistível. Um clássico feito com dedicação.',
-        imagem: 'img/bolo-chocolate.jpg',
+        imagens: ['img/chocolate-1.jpg', 'img/chocolate-2.jpg', 'img/chocolate-3.jpg'],
         tipo: 'tamanhos',
         opcoes: [
           { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '12,00 €', stripeUrl: '#LINK-STRIPE-CHOCOLATE-P' },
@@ -193,7 +206,7 @@
         id: 'cenoura',
         nome: 'Bolo de Cenoura',
         descricao: 'Fofo, caseiro e cheio de sabor que desperta memórias de infância.',
-        imagem: 'img/bolo-cenoura.jpg',
+        imagens: ['img/cenoura-1.jpg', 'img/cenoura-2.jpg', 'img/cenoura-3.jpg', 'img/cenoura-4.jpg'],
         tipo: 'tamanhos',
         opcoes: [
           { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '11,00 €', stripeUrl: '#LINK-STRIPE-CENOURA-P' },
@@ -205,7 +218,7 @@
         id: 'canela',
         nome: 'Bolo de Canela',
         descricao: 'Aromático e reconfortante, perfeito para acompanhar um café ou chá.',
-        imagem: 'img/bolo-canela.jpg',
+        imagens: ['img/canela-1.jpg', 'img/canela-2.jpg', 'img/canela-3.jpg', 'img/canela-4.jpg'],
         tipo: 'tamanhos',
         opcoes: [
           { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '11,00 €', stripeUrl: '#LINK-STRIPE-CANELA-P' },
@@ -217,7 +230,7 @@
         id: 'agriao',
         nome: 'Bolo de Agrião',
         descricao: 'Surpreendentemente suave, macio e com a nossa receita artesanal.',
-        imagem: 'img/bolo-agriao.jpg',
+        imagens: ['img/agriao-1.jpg', 'img/agriao-2.jpg'],
         tipo: 'tamanhos',
         opcoes: [
           { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '11,00 €', stripeUrl: '#LINK-STRIPE-AGRIAO-P' },
@@ -229,7 +242,7 @@
         id: 'brownies',
         nome: 'Brownies',
         descricao: 'Densos, chocolatudos e com aquela crosta perfeita por cima.',
-        imagem: 'img/brownies.jpg',
+        imagens: ['img/brownies-1.jpg', 'img/brownies-2.jpg'],
         tipo: 'fixo',
         detalhe: 'Caixa de 8 pedaços',
         preco: '9,00 €',
@@ -239,7 +252,7 @@
         id: 'brookies',
         nome: 'Brookies',
         descricao: 'A fusão perfeita entre a intensidade do brownie e o crocante da cookie.',
-        imagem: 'img/brookies.jpg',
+        imagens: ['img/brookies-1.jpg', 'img/brookies-2.jpg'],
         tipo: 'fixo',
         detalhe: 'Caixa de 14 pedaços',
         preco: '14,00 €',
@@ -247,21 +260,45 @@
       }
     ];
 
-    // Renderizar o catálogo
+    const indiceFotoAtual = {};
     const grid = document.getElementById('catalogo-grid');
 
-    PRODUTOS.forEach((p, idx) => {
+    PRODUTOS.forEach((p) => {
+      indiceFotoAtual[p.id] = 0;
       const card = document.createElement('div');
       card.className = 'bg-creme rounded-2xl overflow-hidden border border-castanho/10 shadow-sm flex flex-col justify-between';
+
+      const carrosselHTML = `
+        <div class="relative aspect-[4/3] bg-bege overflow-hidden group">
+          <img id="img-${p.id}" src="${p.imagens[0]}" alt="${p.nome}" class="w-full h-full object-cover transition duration-300"
+               onerror="this.src='https://placehold.co/600x450/F0E9DF/3B281E?text=${encodeURIComponent(p.nome)}'">
+          
+          <!-- Botão Anterior -->
+          <button type="button" onclick="mudarFoto('${p.id}', -1)" aria-label="Foto anterior"
+            class="absolute left-2 top-1/2 -translate-y-1/2 bg-creme/85 hover:bg-creme text-castanho w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition">
+            &#8249;
+          </button>
+
+          <!-- Botão Seguinte -->
+          <button type="button" onclick="mudarFoto('${p.id}', 1)" aria-label="Foto seguinte"
+            class="absolute right-2 top-1/2 -translate-y-1/2 bg-creme/85 hover:bg-creme text-castanho w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition">
+            &#8250;
+          </button>
+
+          <!-- Pontinhos indicadores -->
+          <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex gap-1.5 bg-castanho/35 backdrop-blur-xs px-2 py-1 rounded-full">
+            ${p.imagens.map((_, i) => `
+              <span id="dot-${p.id}-${i}" class="w-1.5 h-1.5 rounded-full transition ${i === 0 ? 'bg-creme' : 'bg-creme/45'}"></span>
+            `).join('')}
+          </div>
+        </div>
+      `;
 
       if (p.tipo === 'tamanhos') {
         const inicial = p.opcoes[0];
         card.innerHTML = `
           <div>
-            <div class="aspect-[4/3] bg-bege overflow-hidden">
-              <img src="${p.imagem}" alt="${p.nome}" class="w-full h-full object-cover hover:scale-105 transition duration-500"
-                   onerror="this.src='https://placehold.co/600x450/F0E9DF/3B281E?text=${encodeURIComponent(p.nome)}'">
-            </div>
+            ${carrosselHTML}
             <div class="p-5">
               <div class="flex justify-between items-baseline gap-2 mb-1">
                 <h3 class="font-serif text-2xl font-semibold text-castanho">${p.nome}</h3>
@@ -271,7 +308,7 @@
               <p class="text-sm text-castanho-claro mb-4 leading-relaxed">${p.descricao}</p>
               
               <!-- Seletor de Tamanhos -->
-              <div class="grid grid-cols-3 gap-1.5 bg-bege/80 p-1 rounded-xl mb-5" id="seletor-${p.id}">
+              <div class="grid grid-cols-3 gap-1.5 bg-bege/80 p-1 rounded-xl mb-5">
                 ${p.opcoes.map((op, i) => `
                   <button type="button"
                     onclick="mudarTamanho('${p.id}', ${i})"
@@ -292,10 +329,7 @@
       } else {
         card.innerHTML = `
           <div>
-            <div class="aspect-[4/3] bg-bege overflow-hidden">
-              <img src="${p.imagem}" alt="${p.nome}" class="w-full h-full object-cover hover:scale-105 transition duration-500"
-                   onerror="this.src='https://placehold.co/600x450/F0E9DF/3B281E?text=${encodeURIComponent(p.nome)}'">
-            </div>
+            ${carrosselHTML}
             <div class="p-5">
               <div class="flex justify-between items-baseline gap-2 mb-1">
                 <h3 class="font-serif text-2xl font-semibold text-castanho">${p.nome}</h3>
@@ -316,6 +350,20 @@
 
       grid.appendChild(card);
     });
+
+    function mudarFoto(produtoId, direcao) {
+      const produto = PRODUTOS.find(p => p.id === produtoId);
+      const total = produto.imagens.length;
+      indiceFotoAtual[produtoId] = (indiceFotoAtual[produtoId] + direcao + total) % total;
+      const novoIndice = indiceFotoAtual[produtoId];
+
+      document.getElementById(`img-${produtoId}`).src = produto.imagens[novoIndice];
+
+      for (let i = 0; i < total; i++) {
+        const dot = document.getElementById(`dot-${produtoId}-${i}`);
+        dot.className = `w-1.5 h-1.5 rounded-full transition ${i === novoIndice ? 'bg-creme' : 'bg-creme/45'}`;
+      }
+    }
 
     function mudarTamanho(produtoId, opcaoIndex) {
       const produto = PRODUTOS.find(p => p.id === produtoId);
