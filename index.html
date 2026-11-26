@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NanaBakery | Pastelaria Artesanal em Braga e Barcelos</title>
+  <meta name="description" content="Bolos caseiros feitos por encomenda com entrega grátis em Braga e Barcelos. Bolo de chocolate, cenoura, canela, agrião, brownies e brookies." />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fontes Elegantes (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme: '#FAF7F2',
+            bege: '#F0E9DF',
+            castanho: '#3B281E',
+            'castanho-claro': '#6E5547',
+            dourado: '#A67C52',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-creme text-castanho font-sans antialiased selection:bg-dourado selection:text-white">
+
+  <!-- NAVEGAÇÃO -->
+  <header class="sticky top-0 z-40 bg-creme/90 backdrop-blur-md border-b border-castanho/10">
+    <div class="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#" class="font-serif text-2xl font-semibold tracking-wide text-castanho">
+        NanaBakery
+      </a>
+      <nav class="hidden sm:flex items-center gap-7 text-sm font-medium text-castanho-claro">
+        <a href="#encomendas" class="hover:text-castanho transition">Encomendas</a>
+        <a href="#como-funciona" class="hover:text-castanho transition">Entregas</a>
+        <a href="#quem-somos" class="hover:text-castanho transition">Quem Somos</a>
+      </nav>
+      <a href="#encomendas" class="bg-castanho text-creme text-xs sm:text-sm font-medium px-4 py-2 rounded-full hover:bg-dourado transition">
+        Encomendar
+      </a>
+    </div>
+  </header>
+
+  <!-- 1. HERO (TOPO) -->
+  <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-24 px-5">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="uppercase tracking-[0.2em] text-xs text-dourado font-semibold mb-4">
+        Pastelaria Artesanal · Braga &amp; Barcelos
+      </p>
+      <h1 class="font-serif text-4xl sm:text-6xl font-semibold leading-tight text-castanho mb-6">
+        O sabor caseiro que transforma momentos simples em memórias.
+      </h1>
+      <p class="text-castanho-claro text-base sm:text-lg max-w-xl mx-auto mb-8 leading-relaxed">
+        Bolos feitos de raiz, acabadinhos de sair do forno para a tua mesa. 
+        Encomenda online com <strong>48h de antecedência</strong> e entrega grátis em Braga e Barcelos.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="#encomendas" class="w-full sm:w-auto bg-castanho text-creme px-8 py-3.5 rounded-full font-medium text-sm tracking-wide hover:bg-dourado transition shadow-sm">
+          Ver Catálogo &amp; Preços
+        </a>
+        <a href="#como-funciona" class="w-full sm:w-auto border border-castanho/25 text-castanho px-8 py-3.5 rounded-full font-medium text-sm hover:bg-bege transition">
+          Como Funciona
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. CATÁLOGO / ENCOMENDAS -->
+  <section id="encomendas" class="py-16 px-5 bg-bege/60 border-y border-castanho/5">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-castanho mb-3">Os Nossos Bolos</h2>
+        <p class="text-castanho-claro text-sm sm:text-base max-w-lg mx-auto">
+          Escolhe o tamanho pretendido e clica em encomendar. A data de entrega e o pagamento (MB WAY ou Cartão) são escolhidos no passo seguinte.
+        </p>
+      </div>
+
+      <!-- Grelha gerada automaticamente pelo JavaScript abaixo -->
+      <div id="catalogo-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+    </div>
+  </section>
+
+  <!-- 3. COMO FUNCIONA & ENTREGAS -->
+  <section id="como-funciona" class="py-16 sm:py-20 px-5">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-castanho mb-3">Como Funciona &amp; Entregas</h2>
+        <p class="text-castanho-claro text-sm sm:text-base">Simples, transparente e sempre fresco.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white/70 border border-castanho/10 rounded-2xl p-6">
+          <span class="font-serif text-3xl text-dourado font-semibold">01</span>
+          <h3 class="font-serif text-xl font-semibold mt-2 mb-2">Encomenda Online</h3>
+          <p class="text-sm text-castanho-claro leading-relaxed">
+            Escolhe o teu bolo e tamanho. No pagamento seguro via Stripe (MB WAY ou Cartão), indicas a <strong>data e hora pretendida</strong>.
+          </p>
+        </div>
+        <div class="bg-white/70 border border-castanho/10 rounded-2xl p-6">
+          <span class="font-serif text-3xl text-dourado font-semibold">02</span>
+          <h3 class="font-serif text-xl font-semibold mt-2 mb-2">48h de Antecedência</h3>
+          <p class="text-sm text-castanho-claro leading-relaxed">
+            Todos os bolos são confecionados por encomenda para garantir máxima frescura. Por isso, pedimos um mínimo de <strong>48 horas</strong> de antecedência.
+          </p>
+        </div>
+        <div class="bg-white/70 border border-castanho/10 rounded-2xl p-6">
+          <span class="font-serif text-3xl text-dourado font-semibold">03</span>
+          <h3 class="font-serif text-xl font-semibold mt-2 mb-2">Entrega ou Levantamento</h3>
+          <p class="text-sm text-castanho-claro leading-relaxed">
+            <strong>Entrega grátis</strong> exclusiva nos concelhos de <strong>Braga e Barcelos</strong>, ou levantamento gratuito em local combinado.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. QUEM SOMOS -->
+  <section id="quem-somos" class="py-16 sm:py-20 px-5 bg-bege/60 border-t border-castanho/5">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="uppercase tracking-[0.2em] text-xs text-dourado font-semibold mb-3">A Nossa História</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-castanho mb-6">Quem Somos</h2>
+      <p class="text-castanho-claro text-base sm:text-lg leading-relaxed">
+        A Nana Bakery nasceu do desejo de transformar simples momentos em memórias inesquecíveis! Não há nada como o cheirinho reconfortante de um bolo acabadinho de sair do forno ou o sabor da verdadeira dedicação. Os doces caseiros têm uma magia única: despertam recordações de infância, abraçam-nos nos dias mais cinzentos e trazem um toque de felicidade a qualquer pausa do teu dia. ❤️
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. RODAPÉ LEGAL -->
+  <footer class="bg-castanho text-creme/85 py-12 px-5">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+      <div class="text-center md:text-left">
+        <p class="font-serif text-2xl text-creme font-semibold mb-1">NanaBakery</p>
+        <p class="text-creme/65 text-xs">Braga &amp; Barcelos · Portugal</p>
+        <p class="text-creme/65 text-xs mt-1">
+          Contacto: <a href="mailto:naanabakeryy@gmail.com" class="underline hover:text-creme">naanabakeryy@gmail.com</a>
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-5 text-xs text-creme/75">
+        <a href="https://instagram.com/naanabakeryy" target="_blank" rel="noopener" class="hover:text-creme transition">Instagram (@naanabakeryy)</a>
+        <button onclick="abrirModal('privacidade')" class="hover:text-creme transition underline">Política de Privacidade</button>
+        <button onclick="abrirModal('termos')" class="hover:text-creme transition underline">Termos &amp; Condições</button>
+        <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener" class="hover:text-creme transition underline">Livro de Reclamações</a>
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto mt-8 pt-6 border-t border-creme/10 text-center text-xs text-creme/50">
+      © <span id="ano"></span> NanaBakery. Todos os direitos reservados. Pagamentos seguros processados via Stripe.
+    </div>
+  </footer>
+
+  <!-- MODAL LEGAL (Privacidade e Termos) -->
+  <div id="modal-legal" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-creme text-castanho max-w-lg w-full rounded-2xl p-6 max-h-[80vh] overflow-y-auto shadow-xl">
+      <div class="flex justify-between items-center mb-4">
+        <h3 id="modal-titulo" class="font-serif text-2xl font-semibold"></h3>
+        <button onclick="fecharModal()" class="text-castanho-claro hover:text-castanho text-2xl leading-none">&times;</button>
+      </div>
+      <div id="modal-conteudo" class="text-sm text-castanho-claro space-y-3 leading-relaxed"></div>
+    </div>
+  </div>
+
+  <!-- LÓGICA DO CATÁLOGO E PREÇOS -->
+  <script>
+    // =========================================================================
+    // ÁREA DE EDIÇÃO: Coloca aqui os nomes das fotos e os links da Stripe
+    // =========================================================================
+    const PRODUTOS = [
+      {
+        id: 'chocolate',
+        nome: 'Bolo de Chocolate',
+        descricao: 'Intenso, húmido e irresistível. Um clássico feito com dedicação.',
+        imagem: 'img/bolo-chocolate.jpg',
+        tipo: 'tamanhos',
+        opcoes: [
+          { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '12,00 €', stripeUrl: '#LINK-STRIPE-CHOCOLATE-P' },
+          { label: 'Médio',   peso: '~2 a 3 kg',   preco: '15,00 €', stripeUrl: '#LINK-STRIPE-CHOCOLATE-M' },
+          { label: 'Grande',  peso: '~4 a 5 kg',   preco: '20,00 €', stripeUrl: '#LINK-STRIPE-CHOCOLATE-G' }
+        ]
+      },
+      {
+        id: 'cenoura',
+        nome: 'Bolo de Cenoura',
+        descricao: 'Fofo, caseiro e cheio de sabor que desperta memórias de infância.',
+        imagem: 'img/bolo-cenoura.jpg',
+        tipo: 'tamanhos',
+        opcoes: [
+          { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '11,00 €', stripeUrl: '#LINK-STRIPE-CENOURA-P' },
+          { label: 'Médio',   peso: '~2 a 3 kg',   preco: '14,00 €', stripeUrl: '#LINK-STRIPE-CENOURA-M' },
+          { label: 'Grande',  peso: '~4 a 5 kg',   preco: '19,00 €', stripeUrl: '#LINK-STRIPE-CENOURA-G' }
+        ]
+      },
+      {
+        id: 'canela',
+        nome: 'Bolo de Canela',
+        descricao: 'Aromático e reconfortante, perfeito para acompanhar um café ou chá.',
+        imagem: 'img/bolo-canela.jpg',
+        tipo: 'tamanhos',
+        opcoes: [
+          { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '11,00 €', stripeUrl: '#LINK-STRIPE-CANELA-P' },
+          { label: 'Médio',   peso: '~2 a 3 kg',   preco: '13,00 €', stripeUrl: '#LINK-STRIPE-CANELA-M' },
+          { label: 'Grande',  peso: '~4 a 5 kg',   preco: '18,00 €', stripeUrl: '#LINK-STRIPE-CANELA-G' }
+        ]
+      },
+      {
+        id: 'agriao',
+        nome: 'Bolo de Agrião',
+        descricao: 'Surpreendentemente suave, macio e com a nossa receita artesanal.',
+        imagem: 'img/bolo-agriao.jpg',
+        tipo: 'tamanhos',
+        opcoes: [
+          { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '11,00 €', stripeUrl: '#LINK-STRIPE-AGRIAO-P' },
+          { label: 'Médio',   peso: '~2 a 3 kg',   preco: '13,00 €', stripeUrl: '#LINK-STRIPE-AGRIAO-M' },
+          { label: 'Grande',  peso: '~4 a 5 kg',   preco: '18,00 €', stripeUrl: '#LINK-STRIPE-AGRIAO-G' }
+        ]
+      },
+      {
+        id: 'brownies',
+        nome: 'Brownies',
+        descricao: 'Densos, chocolatudos e com aquela crosta perfeita por cima.',
+        imagem: 'img/brownies.jpg',
+        tipo: 'fixo',
+        detalhe: 'Caixa de 8 pedaços',
+        preco: '9,00 €',
+        stripeUrl: '#LINK-STRIPE-BROWNIES'
+      },
+      {
+        id: 'brookies',
+        nome: 'Brookies',
+        descricao: 'A fusão perfeita entre a intensidade do brownie e o crocante da cookie.',
+        imagem: 'img/brookies.jpg',
+        tipo: 'fixo',
+        detalhe: 'Caixa de 14 pedaços',
+        preco: '14,00 €',
+        stripeUrl: '#LINK-STRIPE-BROOKIES'
+      }
+    ];
+
+    // Renderizar o catálogo
+    const grid = document.getElementById('catalogo-grid');
+
+    PRODUTOS.forEach((p, idx) => {
+      const card = document.createElement('div');
+      card.className = 'bg-creme rounded-2xl overflow-hidden border border-castanho/10 shadow-sm flex flex-col justify-between';
+
+      if (p.tipo === 'tamanhos') {
+        const inicial = p.opcoes[0];
+        card.innerHTML = `
+          <div>
+            <div class="aspect-[4/3] bg-bege overflow-hidden">
+              <img src="${p.imagem}" alt="${p.nome}" class="w-full h-full object-cover hover:scale-105 transition duration-500"
+                   onerror="this.src='https://placehold.co/600x450/F0E9DF/3B281E?text=${encodeURIComponent(p.nome)}'">
+            </div>
+            <div class="p-5">
+              <div class="flex justify-between items-baseline gap-2 mb-1">
+                <h3 class="font-serif text-2xl font-semibold text-castanho">${p.nome}</h3>
+                <span id="preco-${p.id}" class="font-semibold text-lg text-dourado whitespace-nowrap">${inicial.preco}</span>
+              </div>
+              <p id="peso-${p.id}" class="text-xs text-castanho-claro mb-3">${inicial.peso}</p>
+              <p class="text-sm text-castanho-claro mb-4 leading-relaxed">${p.descricao}</p>
+              
+              <!-- Seletor de Tamanhos -->
+              <div class="grid grid-cols-3 gap-1.5 bg-bege/80 p-1 rounded-xl mb-5" id="seletor-${p.id}">
+                ${p.opcoes.map((op, i) => `
+                  <button type="button"
+                    onclick="mudarTamanho('${p.id}', ${i})"
+                    class="btn-tam-${p.id} text-xs py-2 rounded-lg font-medium transition ${i === 0 ? 'bg-castanho text-creme shadow-sm' : 'text-castanho-claro hover:text-castanho'}">
+                    ${op.label}
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <a id="link-${p.id}" href="${inicial.stripeUrl}" target="_blank" rel="noopener"
+               class="block w-full text-center bg-castanho text-creme py-3 rounded-full text-sm font-medium hover:bg-dourado transition">
+              Encomendar
+            </a>
+          </div>
+        `;
+      } else {
+        card.innerHTML = `
+          <div>
+            <div class="aspect-[4/3] bg-bege overflow-hidden">
+              <img src="${p.imagem}" alt="${p.nome}" class="w-full h-full object-cover hover:scale-105 transition duration-500"
+                   onerror="this.src='https://placehold.co/600x450/F0E9DF/3B281E?text=${encodeURIComponent(p.nome)}'">
+            </div>
+            <div class="p-5">
+              <div class="flex justify-between items-baseline gap-2 mb-1">
+                <h3 class="font-serif text-2xl font-semibold text-castanho">${p.nome}</h3>
+                <span class="font-semibold text-lg text-dourado whitespace-nowrap">${p.preco}</span>
+              </div>
+              <p class="text-xs text-castanho-claro mb-3">${p.detalhe}</p>
+              <p class="text-sm text-castanho-claro mb-4 leading-relaxed">${p.descricao}</p>
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <a href="${p.stripeUrl}" target="_blank" rel="noopener"
+               class="block w-full text-center bg-castanho text-creme py-3 rounded-full text-sm font-medium hover:bg-dourado transition">
+              Encomendar
+            </a>
+          </div>
+        `;
+      }
+
+      grid.appendChild(card);
+    });
+
+    function mudarTamanho(produtoId, opcaoIndex) {
+      const produto = PRODUTOS.find(p => p.id === produtoId);
+      const opcao = produto.opcoes[opcaoIndex];
+
+      document.getElementById(`preco-${produtoId}`).textContent = opcao.preco;
+      document.getElementById(`peso-${produtoId}`).textContent = opcao.peso;
+      document.getElementById(`link-${produtoId}`).href = opcao.stripeUrl;
+
+      const botoes = document.querySelectorAll(`.btn-tam-${produtoId}`);
+      botoes.forEach((btn, i) => {
+        if (i === opcaoIndex) {
+          btn.className = `btn-tam-${produtoId} text-xs py-2 rounded-lg font-medium transition bg-castanho text-creme shadow-sm`;
+        } else {
+          btn.className = `btn-tam-${produtoId} text-xs py-2 rounded-lg font-medium transition text-castanho-claro hover:text-castanho`;
+        }
+      });
+    }
+
+    // Modais Legais
+    const TEXTOS_LEGAIS = {
+      privacidade: {
+        titulo: 'Política de Privacidade (RGPD)',
+        texto: `
+          <p>A NanaBakery respeita a sua privacidade. Este website não armazena dados bancários nem recolhe cookies de rastreamento.</p>
+          <p>Os dados necessários para processar a sua encomenda (nome, e-mail, contacto telefónico, morada de entrega e NIF) são recolhidos exclusivamente através da plataforma segura <strong>Stripe</strong> e utilizados apenas para confeção, entrega e emissão de fatura legal.</p>
+          <p>Para exercer os seus direitos de acesso ou eliminação de dados, contacte-nos através de <strong>naanabakeryy@gmail.com</strong>.</p>
+        `
+      },
+      termos: {
+        titulo: 'Termos e Condições',
+        texto: `
+          <p><strong>Antecedência:</strong> Todas as encomendas requerem um mínimo de 48 horas de antecedência.</p>
+          <p><strong>Entregas:</strong> Entrega gratuita exclusiva nos concelhos de Braga e Barcelos, ou levantamento em local combinado.</p>
+          <p><strong>Cancelamentos:</strong> Por se tratarem de produtos alimentares perecíveis feitos por encomenda, só são aceites cancelamentos com reembolso até 36 horas antes da data de entrega combinada.</p>
+        `
+      }
+    };
+
+    function abrirModal(tipo) {
+      document.getElementById('modal-titulo').textContent = TEXTOS_LEGAIS[tipo].titulo;
+      document.getElementById('modal-conteudo').innerHTML = TEXTOS_LEGAIS[tipo].texto;
+      document.getElementById('modal-legal').classList.remove('hidden');
+    }
+
+    function fecharModal() {
+      document.getElementById('modal-legal').classList.add('hidden');
+    }
+
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
