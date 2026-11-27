@@ -244,7 +244,7 @@
       irParaSlideHero((heroIndice + 1) % HERO_FOTOS.length);
     }, 3500);
 
-    // 2. CATÁLOGO DE PRODUTOS
+    // 2. CATÁLOGO DE PRODUTOS (COM LINKS REAIS STRIPE)
     const PRODUTOS = [
       {
         id: 'chocolate',
@@ -253,9 +253,9 @@
         imagens: ['img/chocolate-1.jpg', 'img/chocolate-2.jpg', 'img/chocolate-3.jpg'],
         tipo: 'tamanhos',
         opcoes: [
-          { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '12,00 €', stripeUrl: '#LINK-STRIPE-CHOCOLATE-P' },
-          { label: 'Médio',   peso: '~2 a 3 kg',   preco: '15,00 €', stripeUrl: '#LINK-STRIPE-CHOCOLATE-M' },
-          { label: 'Grande',  peso: '~4 a 5 kg',   preco: '20,00 €', stripeUrl: '#LINK-STRIPE-CHOCOLATE-G' }
+          { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '12,00 €', stripeUrl: 'https://buy.stripe.com/7sY00k3M6a75cZvbLqdfG00' },
+          { label: 'Médio',   peso: '~2 a 3 kg',   preco: '15,00 €', stripeUrl: 'https://buy.stripe.com/6oU9AUciC6UT8JfdTydfG01' },
+          { label: 'Grande',  peso: '~4 a 5 kg',   preco: '20,00 €', stripeUrl: 'https://buy.stripe.com/eVq9AU0zUa751gN4iYdfG02' }
         ]
       },
       {
@@ -265,9 +265,9 @@
         imagens: ['img/cenoura-1.jpg', 'img/cenoura-2.jpg', 'img/cenoura-3.jpg', 'img/cenoura-4.jpg'],
         tipo: 'tamanhos',
         opcoes: [
-          { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '11,00 €', stripeUrl: '#LINK-STRIPE-CENOURA-P' },
-          { label: 'Médio',   peso: '~2 a 3 kg',   preco: '14,00 €', stripeUrl: '#LINK-STRIPE-CENOURA-M' },
-          { label: 'Grande',  peso: '~4 a 5 kg',   preco: '19,00 €', stripeUrl: '#LINK-STRIPE-CENOURA-G' }
+          { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '11,00 €', stripeUrl: 'https://buy.stripe.com/fZu28s3M69310cJbLqdfG03' },
+          { label: 'Médio',   peso: '~2 a 3 kg',   preco: '14,00 €', stripeUrl: 'https://buy.stripe.com/aFa8wQaaudjhe3z5n2dfG04' },
+          { label: 'Grande',  peso: '~4 a 5 kg',   preco: '19,00 €', stripeUrl: 'https://buy.stripe.com/7sYcN6ciCfrp3oV16MdfG05' }
         ]
       },
       {
@@ -277,9 +277,9 @@
         imagens: ['img/canela-1.jpg', 'img/canela-2.jpg', 'img/canela-3.jpg'],
         tipo: 'tamanhos',
         opcoes: [
-          { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '11,00 €', stripeUrl: '#LINK-STRIPE-CANELA-P' },
-          { label: 'Médio',   peso: '~2 a 3 kg',   preco: '13,00 €', stripeUrl: '#LINK-STRIPE-CANELA-M' },
-          { label: 'Grande',  peso: '~4 a 5 kg',   preco: '18,00 €', stripeUrl: '#LINK-STRIPE-CANELA-G' }
+          { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '11,00 €', stripeUrl: 'https://buy.stripe.com/9B600k2I26UT1gNcPudfG06' },
+          { label: 'Médio',   peso: '~2 a 3 kg',   preco: '13,00 €', stripeUrl: 'https://buy.stripe.com/9B66oI2I27YX8JfaHmdfG07' },
+          { label: 'Grande',  peso: '~4 a 5 kg',   preco: '18,00 €', stripeUrl: 'https://buy.stripe.com/eVq6oI96qfrp3oVdTydfG08' }
         ]
       },
       {
@@ -289,9 +289,9 @@
         imagens: ['img/agriao-1.jpg'],
         tipo: 'tamanhos',
         opcoes: [
-          { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '11,00 €', stripeUrl: '#LINK-STRIPE-AGRIAO-P' },
-          { label: 'Médio',   peso: '~2 a 3 kg',   preco: '13,00 €', stripeUrl: '#LINK-STRIPE-AGRIAO-M' },
-          { label: 'Grande',  peso: '~4 a 5 kg',   preco: '18,00 €', stripeUrl: '#LINK-STRIPE-AGRIAO-G' }
+          { label: 'Pequeno', peso: '~1 a 1,5 kg', preco: '11,00 €', stripeUrl: 'https://buy.stripe.com/dRmfZi0zU4ML1gNeXCdfG09' },
+          { label: 'Médio',   peso: '~2 a 3 kg',   preco: '13,00 €', stripeUrl: 'https://buy.stripe.com/3cI28s4Qagvt8JfaHmdfG0a' },
+          { label: 'Grande',  peso: '~4 a 5 kg',   preco: '18,00 €', stripeUrl: 'https://buy.stripe.com/dRm9AUfuOdjh3oV9DidfG0b' }
         ]
       },
       {
@@ -302,7 +302,7 @@
         tipo: 'fixo',
         detalhe: 'Caixa de 8 pedaços',
         preco: '9,00 €',
-        stripeUrl: '#LINK-STRIPE-BROWNIES'
+        stripeUrl: 'https://buy.stripe.com/6oUaEYfuObb9e3z3eUdfG0c'
       },
       {
         id: 'brookies',
@@ -312,7 +312,7 @@
         tipo: 'fixo',
         detalhe: 'Caixa de 14 pedaços',
         preco: '14,00 €',
-        stripeUrl: '#LINK-STRIPE-BROOKIES'
+        stripeUrl: 'https://buy.stripe.com/14A00k4Qaa758JfeXCdfG0d'
       }
     ];
 
